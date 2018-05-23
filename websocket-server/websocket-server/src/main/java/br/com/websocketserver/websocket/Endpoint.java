@@ -55,17 +55,15 @@ public class Endpoint {
 
     @OnError
     public void onError(Session session, Throwable throwable) {
-        // Do error handling here
     }
 
     private static void broadcast(Message message) throws IOException, EncodeException {
         chatEndpoints.forEach(endpoint -> {
             synchronized (endpoint) {
                 try {
-                    endpoint.session.getBasicRemote()
-                            .sendObject(message);
+                    endpoint.session.getBasicRemote().sendObject(message);
                 } catch (IOException | EncodeException e) {
-                    e.printStackTrace();
+                    System.err.println(e.getMessage());
                 }
             }
         });

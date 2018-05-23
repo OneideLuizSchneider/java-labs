@@ -22,11 +22,11 @@ public class MessageEncoder implements Encoder.Text<Message> {
 
     @Override
     public void init(EndpointConfig endpointConfig) {
-        // Custom initialization logic
+
     }
 
     @Override
     public void destroy() {
-        // Close resources
+
     }
 }
