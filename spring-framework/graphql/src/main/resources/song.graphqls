@@ -1,0 +1,13 @@
+type Song {
+  id: ID!
+  title: String!
+  genre: String!
+}
+
+type Query {
+  getSong(id: ID!): Song
+}
+
+type Mutation {
+  newSong(genre: String!,title: String!): Song!
+}
